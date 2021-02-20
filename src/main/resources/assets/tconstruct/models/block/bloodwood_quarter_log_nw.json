@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "tconstruct:block/bloodwood_lower_left",
+    "up": "tconstruct:block/bloodwood_upper_left",
+    "north": "tconstruct:block/bloodwood_log",
+    "south": "tconstruct:block/bloodwood_side_left",
+    "east": "tconstruct:block/bloodwood_side_right",
+    "west": "tconstruct:block/bloodwood_log",
+    "particle": "tconstruct:block/bloodwood_log"
+  }
+}

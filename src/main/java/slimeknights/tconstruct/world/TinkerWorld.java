@@ -1,11 +1,15 @@
 package slimeknights.tconstruct.world;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SlimeBlock;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.WoodType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
@@ -36,6 +40,7 @@ import slimeknights.tconstruct.library.utils.HarvestLevels;
 import slimeknights.tconstruct.shared.block.CongealedSlimeBlock;
 import slimeknights.tconstruct.shared.block.StickySlimeBlock;
 import slimeknights.tconstruct.shared.block.StickySlimeBlock.SlimeType;
+import slimeknights.tconstruct.world.block.QuarterLogBlock;
 import slimeknights.tconstruct.world.block.SlimeDirtBlock;
 import slimeknights.tconstruct.world.block.SlimeDirtBlock.SlimeDirtType;
 import slimeknights.tconstruct.world.block.SlimeGrassBlock;
@@ -121,6 +126,10 @@ public final class TinkerWorld extends TinkerModule {
   public static final EnumObject<FoliageType, SlimeSaplingBlock> slimeSapling = BLOCKS.registerEnum(SlimeGrassBlock.FoliageType.values(), "slime_sapling", (type) -> new SlimeSaplingBlock(new SlimeTree(type), SAPLING), TOOLTIP_BLOCK_ITEM);
   private static final Block.Properties SLIME_LEAVES = builder(Material.LEAVES, NO_TOOL, SoundType.PLANT).hardnessAndResistance(0.3F).tickRandomly().notSolid().setAllowsSpawn((s, w, p, e) -> false);
   public static final EnumObject<FoliageType, SlimeLeavesBlock> slimeLeaves = BLOCKS.registerEnum(SlimeGrassBlock.FoliageType.values(), "slime_leaves", (type) -> new SlimeLeavesBlock(SLIME_LEAVES, type), DEFAULT_BLOCK_ITEM);
+
+  private static final Block.Properties BLOODWOOD = builder(Material.WOOD, ToolType.AXE, SoundType.WOOD).hardnessAndResistance(2.0F);
+  public static final ItemObject<QuarterLogBlock> bloodWoodQuarterLog = BLOCKS.register("bloodwood_quarter_log", () -> new QuarterLogBlock(BLOODWOOD), DEFAULT_BLOCK_ITEM);
+  public static final ItemObject<RotatedPillarBlock> bloodWoodLog = BLOCKS.register("bloodwood_log", () -> new RotatedPillarBlock(BLOODWOOD), DEFAULT_BLOCK_ITEM);
 
   // slime vines
   private static final Block.Properties VINE = builder(Material.TALL_PLANTS, NO_TOOL, SoundType.PLANT).hardnessAndResistance(0.3F).doesNotBlockMovement().tickRandomly();

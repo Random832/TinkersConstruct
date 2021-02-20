@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "orientation=northwest": {
+      "model": "tconstruct:block/bloodwood_quarter_log_nw"
+    },
+    "orientation=northeast": {
+      "model": "tconstruct:block/bloodwood_quarter_log_ne"
+    },
+    "orientation=southwest": {
+      "model": "tconstruct:block/bloodwood_quarter_log_sw"
+    },
+    "orientation=southeast": {
+      "model": "tconstruct:block/bloodwood_quarter_log_se"
+    },
+    "orientation=northdown": {
+      "model": "tconstruct:block/bloodwood_quarter_log_nw",
+      "x": 90,
+      "y": 90
+    },
+    "orientation=southdown": {
+      "model": "tconstruct:block/bloodwood_quarter_log_ne",
+      "x": 90,
+      "y": 90
+    },
+    "orientation=westdown": {
+      "model": "tconstruct:block/bloodwood_quarter_log_nw",
+      "x": 90
+    },
+    "orientation=eastdown": {
+      "model": "tconstruct:block/bloodwood_quarter_log_ne",
+      "x": 90
+    },
+    "orientation=northup": {
+      "model": "tconstruct:block/bloodwood_quarter_log_sw",
+      "x": 90,
+      "y": 90
+    },
+    "orientation=southup": {
+      "model": "tconstruct:block/bloodwood_quarter_log_se",
+      "x": 90,
+      "y": 90
+    },
+    "orientation=westup": {
+      "model": "tconstruct:block/bloodwood_quarter_log_sw",
+      "x": 90
+    },
+    "orientation=eastup": {
+      "model": "tconstruct:block/bloodwood_quarter_log_se",
+      "x": 90
+    }
+  }
+}
