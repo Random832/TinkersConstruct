@@ -30,7 +30,6 @@ public class PlacementHelper {
   }
 
   public static class Vector2d {
-
     public final double x;
     public final double y;
 
@@ -43,16 +42,13 @@ public class PlacementHelper {
   /**
    * @param context context object of click
    * @param doFlip flip coordinates on north/east/top to match default texture mapping
-   * @return 0..7 numbered counterclockwise from right [east for top and bottom face]
+   * @return 0..4 numbered from top left of texture
    */
-  public static int getClickedFaceOctant(ItemUseContext context, boolean doFlip) {
+  public static int getClickedQuadrant(ItemUseContext context, boolean doFlip) {
     Vector2d vec = getClickedFacePos(context, doFlip);
-    double angle = Math.atan2(vec.y, vec.x);
-    if (angle < 0) {
-      return (int) (angle * 4 / Math.PI + 8) % 8;
-    } else {
-      return (int) (angle * 4 / Math.PI) % 8;
-    }
+    int a = vec.x >= 0 ? 1 : 0;
+    int b = vec.y < 0 ? 2 : 0;
+    return a + b;
   }
 
   /**
@@ -62,7 +58,6 @@ public class PlacementHelper {
    */
   public static Vector2d getClickedFacePos(ItemUseContext context, boolean doFlip) {
     // offset of actualPos doesn't matter here because we are only considering the other two axes
-    // doFlip: flip coordinates on north/east/top to match default texture mapping
     Vector3d relativeHitVec = context.getHitVec().subtract(Vector3d.copyCentered(context.getPos()));
     double x, y;
     int flip;
